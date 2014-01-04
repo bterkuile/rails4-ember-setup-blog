@@ -1,7 +1,9 @@
 Since the online resources considering the right way of combining a rails app with Ember here a short example of a Rails 4 Ember setup that scales. The basic examples provided online are set up to be single issue, do not consider a full stack Rails application with parts handled by Ember, since Ember is a nice framework. Since my time is short I will try to update this post to eventually get it to give the optimal amount of information.
 
-<b>DISCLAIMER: this is a very hasty blog, just to indicate a setup, not
-a complete application. Visit the (github)[https://github.com/bterkuile/rails4-ember-setup-blog] page for the code.
+<b>DISCLAIMER: this is a very hasty blog post, just to indicate a setup, not
+a complete application. Visit the [github](https://github.com/bterkuile/rails4-ember-setup-blog) page for the code.
+If you happen to be on the github page and want to visit the blog page
+go to the [blog](http://bterkuile.tumblr.com/post/72196495361/rails4-and-ember-synergy-setup-blogger-start)
 </b>
 
 First we build our basic application call Blogger:
