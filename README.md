@@ -1,7 +1,8 @@
 Since the online resources considering the right way of combining a rails app with Ember here a short example of a Rails 4 Ember setup that scales. The basic examples provided online are set up to be single issue, do not consider a full stack Rails application with parts handled by Ember, since Ember is a nice framework. Since my time is short I will try to update this post to eventually get it to give the optimal amount of information.
 
 <b>DISCLAIMER: this is a very hasty blog post, just to indicate a setup, not
-a complete application. Visit the [github](https://github.com/bterkuile/rails4-ember-setup-blog) page for the code.
+a complete application. There are many unexplained topics like how to use activemodel_serializer and why history is set as ember option, these will be added given time and motivation. 
+Visit the [github](https://github.com/bterkuile/rails4-ember-setup-blog) page for the code.
 If you happen to be on the github page and want to visit the blog page
 go to the [blog](http://bterkuile.tumblr.com/post/72196495361/rails4-and-ember-synergy-setup-blogger-start)
 </b>
@@ -186,7 +187,6 @@ Now create the store to mimic the rails structure with nested routes in
 <pre>
 App.Router.reopen
   location: 'history'
-
 App.Router.map ->
   @resource 'posts', ->
     @resource 'post', path: ':post_id'
@@ -215,10 +215,9 @@ p {{body}}
 
 <tt>app/assets/javascript/ember_app/views/post_view.js.coffee</tt>:
 <pre>
-App.PostView = Ember.View.extend
-  templateName: 'post'
-  classNames: ['post-container']
-
+  App.PostView = Ember.View.extend
+    templateName: 'post'
+    classNames: ['post-container']
 </pre>
 
 Setup the store to be ready for active_model
@@ -228,10 +227,9 @@ Setup the store to be ready for active_model
   # uncomment the following to add a namespace to the requests
   #DS.RESTAdapter.reopen
   #  namespace: 'api'
-
-App.ApplicationSerializer = DS.ActiveModelSerializer
-App.Store = DS.Store.extend
-  adapter: DS.RESTAdapter
+  App.ApplicationSerializer = DS.ActiveModelSerializer
+  App.Store = DS.Store.extend
+    adapter: DS.RESTAdapter
 </pre>
 
 And tell the IndexRoute to fetch the blog posts
