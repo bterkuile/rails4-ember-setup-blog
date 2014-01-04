@@ -1,0 +1,4 @@
+h3
+  link-to "post" this
+    ' {{title}}
+p {{body}}

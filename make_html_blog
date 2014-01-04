@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'redcarpet'
+
+markdown = Redcarpet::Markdown.new Redcarpet::Render::HTML
+
+File.open('blog.html', 'w+'){ |f| f.puts markdown.render File.read('README.md') }

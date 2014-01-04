@@ -1,0 +1,5 @@
+blog.html
+tmp
+db/*.sqlite3
+/log
+/test
